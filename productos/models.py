@@ -4,6 +4,8 @@ from django.utils import timezone
 # Create your models here.
 class Categoria(models.Model):
   nombre = models.CharField(max_length=60)
+  def __str__(self):
+    return self.nombre
 
 class Producto(models.Model):
   nombre = models.CharField(max_length=60)
@@ -20,4 +22,5 @@ class Producto(models.Model):
   creado_en = models.DateField(default=timezone.now)
   
   
-  
+  def __str__(self):
+    return self.nombre
